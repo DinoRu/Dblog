@@ -86,15 +86,15 @@ WSGI_APPLICATION = 'Dblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# postgres://yujrzvgjhycavd:e9a0cee8519b16dd10fc9421cc4215d17f67b0c9a298046b441e83df894c309a@ec2-3-220-240-189.compute-1.amazonaws.com:5432/d8hntla0ma93n
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'postgres',
-        'HOST': '',
+        'NAME': 'd8hntla0ma93n',
+        'USER': 'yujrzvgjhycavd',
+        'HOST': 'ec2-3-220-240-189.compute-1.amazonaws.com',
         'PORT': 5432,
-        'PASSWORD': '',
+        'PASSWORD': 'e9a0cee8519b16dd10fc9421cc4215d17f67b0c9a298046b441e83df894c309a',
     }
 }
 
