@@ -8,8 +8,8 @@ before_script:
 branches:
   only:
     - staging
-    
-env: DJANGO_SETTINGS_MODULE="Dblog.settings"
+
+env: DJANGO_SETTINGS_MODULE="Dblog.settings.travis"
 
 services:
   - postgresql
