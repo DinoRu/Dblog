@@ -26,12 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!7m_)uag9+j)*5(6*#sx8ppgrhdpb3l8nq6-n517hkd=!dkh(t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
 
-ALLOWED_HOSTS = ['blooming-savannah-87424.herokuapp.com', '127.0.0.1']
+DEBUG = True
+
+ALLOWED_HOSTS = ['137.184.150.182']
 
 
 # Application definition
@@ -60,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Dblog.urls'
@@ -90,11 +87,10 @@ WSGI_APPLICATION = 'Dblog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd8hntla0ma93n',
-        'USER': 'yujrzvgjhycavd',
-        'HOST': 'ec2-3-220-240-189.compute-1.amazonaws.com',
+        'NAME': 'dblog',
+        'USER': 'mustapha_diarra',
+        'HOST': '',
         'PORT': 5432,
-        'PASSWORD': 'e9a0cee8519b16dd10fc9421cc4215d17f67b0c9a298046b441e83df894c309a',
     }
 }
 
@@ -153,14 +149,3 @@ EMAIL_HOST_PASSWORD = 'Mamman09'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
-
-# Configuration des fichiers statics
-if os.environ.get('ENV') == 'PRODUCTION':
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-    STATICFILES_DIRS = (
-        os.path.join(PROJECT_ROOT, 'static'),
-    )
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
