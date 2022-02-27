@@ -149,3 +149,11 @@ EMAIL_HOST_PASSWORD = 'Mamman09'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'width': '100%',
+    },
+}
